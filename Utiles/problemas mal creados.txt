@@ -1,0 +1,3 @@
+select * from historico_problema order by cod_problemssp desc;
+delete from historico_problema where id_problema='';
+delete from detalle_problema where id_problema='';

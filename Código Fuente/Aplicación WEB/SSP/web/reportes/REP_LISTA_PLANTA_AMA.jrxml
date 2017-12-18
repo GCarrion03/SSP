@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="2100" pageHeight="842" columnWidth="2100" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true">
+	<queryString>
+		<![CDATA[{ call DBO.REP_LISTA_PLANTA_AMA}]]>
+	</queryString>
+	<field name="ID_PROBLEMA" class="java.lang.String"/>
+	<field name="NOMBRE_CORRESPONSAL" class="java.lang.String"/>
+	<field name="NOMBRE_RESPONSABLE" class="java.lang.String"/>
+	<field name="ESTATUS" class="java.lang.String"/>
+	<field name="FECHA_APERTURA" class="java.lang.String"/>
+        <field name="FECHA_CIERRE" class="java.lang.String"/>
+	<field name="PLATAFORMA" class="java.lang.String"/>
+	<field name="MODELO" class="java.lang.String"/>
+	<field name="CATEGORIA" class="java.lang.String"/>
+	<field name="FALLA" class="java.lang.String"/>
+        <field name="NIVEL_1" class="java.lang.String"/>
+	<field name="NIVEL_2" class="java.lang.String"/>
+	<field name="ZONA" class="java.lang.String"/>
+	<field name="DETALLE" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="150" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[GM-OBB
+                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="600" y="0" width="1500" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Reporte Solución de problemas
+                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="2100" height="30"/>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Documentos Planta Tarjeta Amarilla
+                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="50" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[ESTATUS
+                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="50" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[ID PROBLEMA
+                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="600" y="50" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[FECHA_APERTURA
+                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="50" width="150" height="20"/>
+				<textElement>
+					<font isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[LET RESPONSABLE
+                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="50" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[EV RESPONSABLE
+                ]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="300" y="0" width="300" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="150" y="0" width="150" height="20"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[01/01/2010-
+                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="750" y="50" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[FECHA_CIERRE
+                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="900" y="50" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[PLATAFORMA
+                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1050" y="50" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[MODELO
+                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1200" y="50" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[CATEGORIA
+                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1350" y="50" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[FALLA
+                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1500" y="50" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[NIVEL 1
+                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1650" y="50" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[NIVEL 2
+                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1800" y="50" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[ZONA
+                ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1950" y="50" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[DETALLE
+                ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ID_PROBLEMA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{NOMBRE_CORRESPONSAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{NOMBRE_RESPONSABLE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ESTATUS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="600" y="0" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{FECHA_APERTURA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="750" y="0" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{FECHA_CIERRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="900" y="0" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{PLATAFORMA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1050" y="0" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{MODELO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1200" y="0" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CATEGORIA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1350" y="0" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{FALLA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1500" y="0" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{NIVEL_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1650" y="0" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{NIVEL_2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1800" y="0" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ZONA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1950" y="0" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DETALLE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="300" height="20"/>
+				<textElement/>
+				<text><![CDATA[Software de Solución de problemas
+                ]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="300" y="0" width="450" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

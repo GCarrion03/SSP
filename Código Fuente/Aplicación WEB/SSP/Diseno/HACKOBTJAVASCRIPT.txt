@@ -1,0 +1,1 @@
+javascript:location.href='Cinco_pasos.jsp?var='+parent.document.URL.substring(parent.document.URL.indexOf('?')+5,parent.document.URL.length);
